@@ -46,7 +46,145 @@ html, body {
   overflow-y: auto;
   scroll-behavior: smooth;
 }
+
+/* Mobile First Responsive Fixes */
+@media (max-width: 768px) {
+  .home-wrapper {
+    padding: 2rem 5% 1rem;
+    gap: 2rem;
+    min-height: auto;
+  }
+
+  .inline-stats {
+    margin-top: 1.5rem; /* reduced space below buttons */
+  }
+
+  section#home {
+    padding-top: -10em; /* remove bottom padding if exists */
+    /* optional tweak to tighten gap */
+  }
+
+  section#about {
+    /* reduce top padding */
+     /* pull up the section to close gap */
+  }
+
+  .circle-glow {
+    margin-top: 0.5rem;
+  }
+
+  .about-container {
+    margin-top: 0;
+    padding-top: 0;
+  }
+   #about-particles,
+  #particle-canvas {
+    display: none !important;
+    height: 0;
+  }
+  .home {
+  padding-bottom: 0 !important;
+  margin-bottom: -20px !important;
+}
+
+}
+
+
+/* Desktop specific adjustments */
+@media (min-width: 1024px) {
+  .hero {
+    left: -11.5em;
+  }
+}
+/* Ultra-compact mobile fixes (400px and below) */
+@media (max-width: 400px) {
+  /* 1. Drastically reduce section spacing */
+  section {
+    padding: 20px 5% !important;
+    margin: 5px 0 !important;
+  }
+  
+  /* 2. Remove all unnecessary vertical spacing */
+  .home-wrapper,
+  .about-container,
+  .blog-list,
+  .projects,
+  .feature-tiles,
+  .input-box {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  
+  /* 3. Tighten content containers */
+  .home-content,
+  .inline-stats,
+  .circle-glow,
+  article,
+  .project-card,
+  .feature-tile {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+  }
+  
+  /* 4. Reduce heading margins */
+  h1, h2, h3, .heading {
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+  }
+  
+  /* 5. Adjust specific sections */
+  #about {
+    padding: 20px 10px !important;
+  }
+  
+  .education {
+    padding: 20px 5% !important;
+  }
+  
+  .projects-section {
+    padding: 20px 5% !important;
+  }
+  
+  /* 6. Make stats more compact */
+  .inline-stats {
+    margin-top: 10px !important;
+    gap: 8px !important;
+  }
+  
+  .stat-box {
+    min-width: 45%;
+  }
+  
+  /* 7. Remove animations that might affect layout */
+  .floatImage, .pulse, .orbit {
+    display: none !important;
+    animation: none !important;
+  }
+  
+  /* 8. Ensure no horizontal overflow */
+  body, html {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* 9. Make text more compact */
+  p, .stat-label, .content {
+    font-size: 0.8rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 5px !important;
+  }
+  
+  /* 10. Remove any remaining large gaps */
+  br {
+    display: none;
+  }
+ 
+}
+
 </style>
+<link rel="stylesheet" href="responsive.css">
 </head>
 
 <body>
@@ -72,8 +210,8 @@ html, body {
 <section class="home" id="home">
   <div class="home-wrapper">
     <!-- LEFT: Text Content -->
-    <div class="home-content">
-      <h1>Hi, I'm <span style="color:#00abf0;">Gohar</span></h1>
+    <div class="home-content" >
+      <h1 style="position:relative; left:-3.5em">Hi, I'm <span style="color:#00abf0;">Gohar</span></h1>
 <div class="hero">
       <div class="text-animate">
         <div class="typewriter">
@@ -125,7 +263,7 @@ html, body {
   align-items: center;
   justify-content: space-between;
   padding: 0 9%;
-  min-height: 100vh;
+  
   gap: 6rem; /* Increased from 2rem to 4rem */
 }
 
@@ -652,32 +790,148 @@ html, body {
       background-color: #0093cc;
     }
 
-    @media (max-width: 768px) {
-      body {
-        padding: 4rem 5%;
-      }
+  /* Mobile First Responsive Fixes */
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 5% !important;
+    min-height: auto !important;
+  }
 
-      h1 {
-        font-size: 3rem;
-      }
+  .home-wrapper {
+    padding: 2rem 5% 1rem;
+    gap: 1rem;
+    min-height: auto;
+  }
 
-      article {
-        padding: 2rem 2rem;
-      }
+  .inline-stats {
+    margin-top: 1.5rem;
+    gap: 1rem;
+  }
 
-      article h2 {
-        font-size: 2rem;
-      }
+  section#home {
+    padding-bottom: 0;
+    margin-bottom: -30px;
+  }
 
-      article p.content {
-        font-size: 1.5rem;
-      }
+  section#about {
+    padding-top: 10px;
+    margin-top: -40px;
+  }
 
-      #search-bar {
-        width: 90%;
-      }
-    }
+  .circle-glow {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
 
+  .about-container {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  #about-particles,
+  #particle-canvas {
+    display: none !important;
+    height: 0;
+  }
+  
+  .home {
+    padding-bottom: 0 !important;
+    margin-bottom: -50px !important;
+  }
+
+  .education {
+    padding: 2rem 5% !important;
+  }
+
+  .projects-section {
+    padding: 2rem 5% !important;
+  }
+
+  .blog-list {
+    padding: 1rem 0 !important;
+  }
+
+  article {
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+/* Ultra-compact mobile fixes (400px and below) */
+@media (max-width: 400px) {
+  section {
+    padding: 1rem 5% !important;
+    margin: 0 !important;
+  }
+
+  .home-wrapper,
+  .about-container,
+  .blog-list,
+  .projects,
+  .feature-tiles,
+  .input-box {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .home-content,
+  .inline-stats,
+  .circle-glow,
+  article,
+  .project-card,
+  .feature-tile {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+  }
+
+  h1, h2, h3, .heading {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+  }
+
+  #about {
+    padding: 15px 5px !important;
+  }
+
+  .education {
+    padding: 15px 5% !important;
+  }
+
+  .projects-section {
+    padding: 15px 5% !important;
+  }
+
+  .inline-stats {
+    margin-top: 5px !important;
+    gap: 5px !important;
+  }
+
+  .stat-box {
+    min-width: 45%;
+    padding: 5px !important;
+  }
+
+  .floatImage, .pulse, .orbit {
+    display: none !important;
+    animation: none !important;
+  }
+
+  p, .stat-label, .content {
+    font-size: 0.8rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 3px !important;
+  }
+
+  br {
+    display: none;
+  }
+  
+  .home {
+    position:absolute;
+    top: -100em !important;
+  }
+}
     
   </style>
 </head>
